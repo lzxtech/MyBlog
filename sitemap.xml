@@ -2,6 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liuzixuanblog.zeabur.app/tags/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuzixuanblog.zeabur.app/social/fcircle/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuzixuanblog.zeabur.app/social/link/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuzixuanblog.zeabur.app/site/time/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuzixuanblog.zeabur.app/personal/love/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuzixuanblog.zeabur.app/site/census/index.html</loc>
+    
+    <lastmod>2024-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://liuzixuanblog.zeabur.app/posts/2013454d.html</loc>
     
     <lastmod>2024-10-21</lastmod>
@@ -56,15 +110,6 @@
   </url>
   
   <url>
-    <loc>https://liuzixuanblog.zeabur.app/tags/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://liuzixuanblog.zeabur.app/life/games/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -83,15 +128,6 @@
   </url>
   
   <url>
-    <loc>https://liuzixuanblog.zeabur.app/life/music/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://liuzixuanblog.zeabur.app/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -101,43 +137,7 @@
   </url>
   
   <url>
-    <loc>https://liuzixuanblog.zeabur.app/personal/love/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://liuzixuanblog.zeabur.app/site/census/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://liuzixuanblog.zeabur.app/site/time/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://liuzixuanblog.zeabur.app/social/fcircle/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://liuzixuanblog.zeabur.app/social/link/index.html</loc>
+    <loc>https://liuzixuanblog.zeabur.app/life/music/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -148,7 +148,7 @@
   <url>
     <loc>https://liuzixuanblog.zeabur.app/site/echarts/index.html</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
