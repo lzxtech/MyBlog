@@ -1,7 +1,7 @@
 //get请求
 $.ajax({
     type: 'get',
-    url: 'https://apis.map.qq.com/ws/location/v1/ip',
+    url: 'https://lbs.qq.com/dev/console/application/mine',
     data: {
         key: '24EBZ-TLBCZ-HKOXR-ZYPGD-ZVRKZ-JWFWQ',
         output: 'jsonp',
