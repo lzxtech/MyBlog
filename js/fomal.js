@@ -73,7 +73,7 @@ $.ajax({
   type: 'get',
   url: 'https://apis.map.qq.com/ws/location/v1/ip',
   data: {
-    key: '24EBZ-TLBCZ-HKOXR-ZYPGD-ZVRKZ-JWFWQ',  // 这里要写你的KEY!!!
+    key: 'UNSBZ-ROHCU-77CVF-GCKCG-DOIB5-FCFP3',  // 这里要写你的KEY!!!
     output: 'jsonp',
   },
   dataType: 'jsonp',
