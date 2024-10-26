@@ -110,6 +110,15 @@
   </url>
   
   <url>
+    <loc>https://xuansanblog.cn/box/animation/index.html</loc>
+    
+    <lastmod>2024-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuansanblog.cn/box/gallery/index.html</loc>
     
     <lastmod>2024-10-20</lastmod>
@@ -120,15 +129,6 @@
   
   <url>
     <loc>https://xuansanblog.cn/box/nav/index.html</loc>
-    
-    <lastmod>2024-10-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuansanblog.cn/box/animation/index.html</loc>
     
     <lastmod>2024-10-20</lastmod>
     
