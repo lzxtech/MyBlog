@@ -8216,7 +8216,7 @@ a:hover {
 #fps {
   position: fixed;
   left: 10px;
-  bottom: 10px;
+  top: 80px;
   z-index: 1919810;
 }
 [data-theme="light"] #fps {
