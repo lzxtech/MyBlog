@@ -2804,8 +2804,10 @@ function createtime() {
   let currentTimeHtml = "";
   (currentTimeHtml =
     hnum < 18 && hnum >= 9
-      ? `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/26/dba300805e108264b521e9e1332c3982.png' title='科研摸鱼中~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/26/b5b2093e84cf788faaded06586517b49.png' title='下班啦~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+      ? `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/26/dba300805e108264b521e9e1332c3982.png' style="width: 15px; height: 15px; border-radius: 5px" title='科研摸鱼中~'><div style="font-size:13px;font-weight:bold">科研摸鱼中~</div>
+      <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
+      : `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/26/b5b2093e84cf788faaded06586517b49.png' style="width: 15px; height: 15px; border-radius: 5px" title='终于下班啦~'><div style="font-size:13px;font-weight:bold">终于下班啦~</div>
+      <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
     document.getElementById("workboard") &&
     (document.getElementById("workboard").innerHTML = currentTimeHtml);
 }
