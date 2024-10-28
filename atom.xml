@@ -6,7 +6,7 @@
   <link href="https://xuansanblog.cn/atom.xml" rel="self"/>
   
   <link href="https://xuansanblog.cn/"/>
-  <updated>2024-10-21T14:00:00.000Z</updated>
+  <updated>2024-10-28T12:38:41.594Z</updated>
   <id>https://xuansanblog.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>post</title>
+    <link href="https://xuansanblog.cn/posts/5a8a6c8d.html"/>
+    <id>https://xuansanblog.cn/posts/5a8a6c8d.html</id>
+    <published>2024-10-28T12:30:43.000Z</published>
+    <updated>2024-10-28T12:38:41.594Z</updated>
+    
+    
+    <summary type="html">本篇笔记汇总了Java基础的知识，鉴于本人水品有限，如有错误，还请各位读者不吝赐教，在评论区指出，感谢支持！</summary>
+    
+    
+    
+    <category term="Java" scheme="https://xuansanblog.cn/categories/Java/"/>
+    
+    
+    <category term="Java基础学习笔记" scheme="https://xuansanblog.cn/tags/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown语法与外挂标签写法汇总</title>
