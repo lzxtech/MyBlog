@@ -6,7 +6,7 @@
   <link href="https://xuansanblog.cn/atom.xml" rel="self"/>
   
   <link href="https://xuansanblog.cn/"/>
-  <updated>2024-11-01T09:33:10.612Z</updated>
+  <updated>2024-11-01T10:52:54.465Z</updated>
   <id>https://xuansanblog.cn/</id>
   
   <author>
@@ -17,40 +17,294 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Redis实战项目笔记</title>
-    <link href="https://xuansanblog.cn/posts/83ac30cd.html"/>
-    <id>https://xuansanblog.cn/posts/83ac30cd.html</id>
-    <published>2024-10-29T03:45:42.000Z</published>
-    <updated>2024-11-01T09:33:10.612Z</updated>
+    <title>博客搭建与魔改</title>
+    <link href="https://xuansanblog.cn/posts/915bdd44.html"/>
+    <id>https://xuansanblog.cn/posts/915bdd44.html</id>
+    <published>2024-11-01T10:06:24.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
     
-    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：<a href="https://b1b7dv7oegu.feishu.cn/wiki/QD3Ew5UcJiAGQpkBjrjcFXIznOf?from=from_copylink">https://b1b7dv7oegu.feishu.cn/wiki/QD3Ew5UcJiAGQpkBjrjcFXIznOf?from=from_copylink</a></p>]]></content>
-    
-    
-    <summary type="html">笔记链接：https://b1b7dv7oegu.feishu.cn/wiki/QD3Ew5UcJiAGQpkBjrjcFXIznOf?from=from_copylink</summary>
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
     
     
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
     
+    
+    
+    <category term="搭建" scheme="https://xuansanblog.cn/categories/%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="博客搭建" scheme="https://xuansanblog.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
   <entry>
-    <title>JavaSe第一章</title>
-    <link href="https://xuansanblog.cn/posts/5a8a6c8d.html"/>
-    <id>https://xuansanblog.cn/posts/5a8a6c8d.html</id>
-    <published>2024-10-28T12:30:43.000Z</published>
-    <updated>2024-11-01T09:33:10.612Z</updated>
+    <title>黑马商城-SpringCloud项目实战</title>
+    <link href="https://xuansanblog.cn/posts/6e6b3f2e.html"/>
+    <id>https://xuansanblog.cn/posts/6e6b3f2e.html</id>
+    <published>2024-11-01T10:05:39.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
     
-    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接： <a href="https://b1b7dv7oegu.feishu.cn/wiki/SocUwsC7kiEtsIkVbX5cwEShn3c?from=from_copylink">https://b1b7dv7oegu.feishu.cn/wiki/SocUwsC7kiEtsIkVbX5cwEShn3c?from=from_copylink</a></p>]]></content>
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：<a href="https://b1b7dv7oegu.feishu.cn/wiki/Lun6wnVtgi7MTkkdiylcq0RPnve?from=from_copylink">https://b1b7dv7oegu.feishu.cn/wiki/Lun6wnVtgi7MTkkdiylcq0RPnve?from=from_copylink</a></p>]]></content>
     
     
-    <summary type="html">本篇笔记汇总了Java基础的知识，鉴于本人水品有限，如有错误，还请各位读者不吝赐教，在评论区指出，感谢支持！笔记链接： https://b1b7dv7oegu.feishu.cn/wiki/SocUwsC7kiEtsIkVbX5cwEShn3c?from=from_copylink</summary>
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;a href=&quot;https://b1b7dv7oegu.feishu.cn/wiki/Lun6wnVtgi7MTkkdiylcq0RPnve?from=from_copylink&quot;&gt;h</summary>
+      
+    
+    
+    
+    <category term="项目" scheme="https://xuansanblog.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="Java" scheme="https://xuansanblog.cn/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud</title>
+    <link href="https://xuansanblog.cn/posts/96a41905.html"/>
+    <id>https://xuansanblog.cn/posts/96a41905.html</id>
+    <published>2024-11-01T10:05:02.000Z</published>
+    <updated>2024-11-01T10:52:54.469Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
     
     
     
     <category term="Java" scheme="https://xuansanblog.cn/categories/Java/"/>
     
     
-    <category term="Java基础学习笔记" scheme="https://xuansanblog.cn/tags/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="SpringCloud" scheme="https://xuansanblog.cn/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学成在线-微服务项目实战</title>
+    <link href="https://xuansanblog.cn/posts/6eedde58.html"/>
+    <id>https://xuansanblog.cn/posts/6eedde58.html</id>
+    <published>2024-11-01T10:04:37.000Z</published>
+    <updated>2024-11-01T10:52:54.466Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="项目" scheme="https://xuansanblog.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="微服务" scheme="https://xuansanblog.cn/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机搭建</title>
+    <link href="https://xuansanblog.cn/posts/2a3e1c66.html"/>
+    <id>https://xuansanblog.cn/posts/2a3e1c66.html</id>
+    <published>2024-11-01T10:03:37.000Z</published>
+    <updated>2024-11-01T10:52:54.466Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="搭建" scheme="https://xuansanblog.cn/categories/%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="搭建" scheme="https://xuansanblog.cn/tags/%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaWeb</title>
+    <link href="https://xuansanblog.cn/posts/99720b1c.html"/>
+    <id>https://xuansanblog.cn/posts/99720b1c.html</id>
+    <published>2024-11-01T09:58:45.000Z</published>
+    <updated>2024-11-01T10:52:54.468Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://xuansanblog.cn/categories/Java/"/>
+    
+    
+    <category term="JavaWeb" scheme="https://xuansanblog.cn/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>苍穹外卖Java项目实战</title>
+    <link href="https://xuansanblog.cn/posts/6c6bbf41.html"/>
+    <id>https://xuansanblog.cn/posts/6c6bbf41.html</id>
+    <published>2024-11-01T09:58:29.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="项目" scheme="https://xuansanblog.cn/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="JavaWeb" scheme="https://xuansanblog.cn/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习</title>
+    <link href="https://xuansanblog.cn/posts/33115a55.html"/>
+    <id>https://xuansanblog.cn/posts/33115a55.html</id>
+    <published>2024-11-01T09:56:17.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="人工智能" scheme="https://xuansanblog.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="人工智能" scheme="https://xuansanblog.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法</title>
+    <link href="https://xuansanblog.cn/posts/b7e144d1.html"/>
+    <id>https://xuansanblog.cn/posts/b7e144d1.html</id>
+    <published>2024-11-01T09:56:04.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接&lt;br&gt;
+笔记链接：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://xuansanblog.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="https://xuansanblog.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="https://xuansanblog.cn/posts/79666db.html"/>
+    <id>https://xuansanblog.cn/posts/79666db.html</id>
+    <published>2024-11-01T09:55:45.000Z</published>
+    <updated>2024-11-01T10:52:54.469Z</updated>
+    
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://xuansanblog.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://xuansanblog.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis实战项目笔记</title>
+    <link href="https://xuansanblog.cn/posts/83ac30cd.html"/>
+    <id>https://xuansanblog.cn/posts/83ac30cd.html</id>
+    <published>2024-10-29T03:45:42.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接：<a href="https://b1b7dv7oegu.feishu.cn/wiki/QD3Ew5UcJiAGQpkBjrjcFXIznOf?from=from_copylink">https://b1b7dv7oegu.feishu.cn/wiki/QD3Ew5UcJiAGQpkBjrjcFXIznOf?from=from_copylink</a></p>]]></content>
+    
+    
+    <summary type="html">本篇笔记节选了Redis的知识片段便于复习，鉴于本人水品有限，如有错误，还请各位读者不吝赐教，在评论区指出，感谢支持！</summary>
+    
+    
+    
+    <category term="数据库" scheme="https://xuansanblog.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="Redis" scheme="https://xuansanblog.cn/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSe</title>
+    <link href="https://xuansanblog.cn/posts/5a8a6c8d.html"/>
+    <id>https://xuansanblog.cn/posts/5a8a6c8d.html</id>
+    <published>2024-10-28T12:30:43.000Z</published>
+    <updated>2024-11-01T10:52:54.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博客选取笔记重要部分便于复习专用，如需参阅完整笔记请点击以下链接<br>笔记链接： <a href="https://b1b7dv7oegu.feishu.cn/wiki/SocUwsC7kiEtsIkVbX5cwEShn3c?from=from_copylink">https://b1b7dv7oegu.feishu.cn/wiki/SocUwsC7kiEtsIkVbX5cwEShn3c?from=from_copylink</a></p>]]></content>
+    
+    
+    <summary type="html">本篇笔记节选了Java基础的知识片段便于复习，鉴于本人水品有限，如有错误，还请各位读者不吝赐教，在评论区指出，感谢支持！</summary>
+    
+    
+    
+    <category term="Java" scheme="https://xuansanblog.cn/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://xuansanblog.cn/tags/Java/"/>
     
   </entry>
   
