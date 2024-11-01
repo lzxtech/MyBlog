@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuansanblog.cn/posts/83ac30cd.html</loc>
+    
+    <lastmod>2024-10-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuansanblog.cn/posts/5a8a6c8d.html</loc>
     
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-10-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://xuansanblog.cn/box/gallery/index.html</loc>
+    <loc>https://xuansanblog.cn/box/nav/index.html</loc>
     
     <lastmod>2024-10-20</lastmod>
     
@@ -146,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://xuansanblog.cn/box/nav/index.html</loc>
+    <loc>https://xuansanblog.cn/box/gallery/index.html</loc>
     
     <lastmod>2024-10-20</lastmod>
     
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://xuansanblog.cn/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,21 +192,21 @@
   
   <url>
     <loc>https://xuansanblog.cn/tags/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuansanblog.cn/tags/Markdown/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuansanblog.cn/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -206,14 +215,14 @@
   
   <url>
     <loc>https://xuansanblog.cn/categories/Java/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuansanblog.cn/categories/%E6%BC%94%E7%A4%BA/</loc>
-    <lastmod>2024-10-28</lastmod>
+    <lastmod>2024-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
