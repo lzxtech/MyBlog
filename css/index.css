@@ -1393,7 +1393,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://tuchuang.voooe.cn/images/2024/10/21/background.png);
+  background: url(https://xuansanblog.s3.bitiful.net/blogappwebp/background.webp);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -5222,7 +5222,7 @@ mjx-container[display],
   border-radius: 5px !important;
 }
 [data-theme="dark"] #web_bg {
-  background: url(https://tuchuang.voooe.cn/images/2024/10/23/dark.jpg);
+  background: url(https://xuansanblog.s3.bitiful.net/blogappwebp/dark.webp);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -5230,14 +5230,14 @@ mjx-container[display],
 }
 @media screen and (max-width: 800px) {
   #web_bg {
-    background: url(https://tuchuang.voooe.cn/images/2024/10/23/mobilelight.jpg);
+    background: url(https://xuansanblog.s3.bitiful.net/blogappwebp/mobilelight.webp);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
   [data-theme="dark"] #web_bg {
-    background: url(https://tuchuang.voooe.cn/images/2024/10/23/mobiledark.jpg);
+    background: url(https://xuansanblog.s3.bitiful.net/blogappwebp/mobiledark.webp);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
@@ -7701,13 +7701,13 @@ button#go-up:hover #percent {
 
 /* 个人信息卡片背景图 */
 [data-theme="light"] #aside-content > .card-widget.card-info {
-  background-image: url(https://tuchuang.voooe.cn/images/2024/10/22/PIBL.jpg);  /* url样式 白天的个人信息背景 */
+  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/PIBL.webp);  /* url样式 白天的个人信息背景 */
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
 }
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background-image: url(https://tuchuang.voooe.cn/images/2024/10/22/PIBD.jpg);  /* url样式 晚上的个人信息背景 */
+  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/PIBD.webp);  /* url样式 晚上的个人信息背景 */
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
