@@ -3228,32 +3228,6 @@ function toggleRightside() {
   }
 }
 
-
-
-// function setAside() {
-//   document.getElementById("asideSet").checked ? (localStorage.setItem("aside", "1"),
-//   document.getElementById("aside-show").innerText = ":root{--layout-justify-content: unset; --aside-content-display: block;}") : (localStorage.setItem("aside", "0"),
-//   document.getElementById("aside-show").innerText = ":root{--layout-justify-content: center; --aside-content-display: none;}")
-// }
-// 顶栏显示
-function setNav() {
-  document.getElementById("navSet").checked ? (document.getElementById("nav").classList.add("nav_fixed"),
-  document.getElementById("nav").classList.remove("nav_visible"),
-  document.getElementById("nav-display").innerText = ":root{--nav-visible-display:none;--nav-fixed-display:inline-flex;}",
-  localStorage.setItem("nav", "1")) : (document.getElementById("nav").classList.add("nav_visible"),
-  document.getElementById("nav").classList.remove("nav_fixed"),
-  document.getElementById("nav-display").innerText = ":root{--nav-visible-display:inline-flex;--nav-fixed-display:none;}",
-  localStorage.setItem("nav", "0"))
-}
-
-
-// 侧栏位置
-function setAsidePos() {
-  document.getElementById("asidePosSet").checked ? (localStorage.setItem("asidePos", "1"),
-  document.getElementById("aside-pos").innerText = ":root{--first-child-order: 0; --recent-post-item-margin: 0px 1% 20px 0px;}") : (localStorage.setItem("asidePos", "0"),
-  document.getElementById("aside-pos").innerText = ":root{--first-child-order: 2; --recent-post-item-margin: 0px 0px 20px 1%;}")
-}
-
 // 模糊效果开关
 if (localStorage.getItem("blur") == undefined) {
   localStorage.setItem("blur", 0);
@@ -3531,12 +3505,7 @@ function createWinbox() {
     },
   });
   winResize();
-
   window.addEventListener("resize", winResize);
-
-  document.getElementById("blurRad").value = blurRadius,  // 参数
-  document.getElementById("saturation").value = saturate,
-  document.getElementById("contrast").value = contrast,
 
   // 每一类我放了一个演示，直接往下复制粘贴 a标签 就可以，需要注意的是 函数里面的链接 冒号前面需要添加反斜杠\进行转义
   winbox.body.innerHTML = `
@@ -3559,15 +3528,9 @@ function createWinbox() {
   <p class="rang_width" id="rang_blur" style="width:${miniBlur}%"></p>
 </div>
 
-<div class="content-text" style="font-weight:bold; padding-left:10px; "> 背景滤镜 </div><input type="checkbox" id="bgFilterSet" onclick="setBgFilter()">
-<div class="bgFilterValue" id="bgFilterShow" style="font-weight:bold;padding-left:10px">模糊半径: <span style="color:#eb5353">${blurRadius}px</span> | 饱和度: <span style="color:#eb5353">${saturate}%</span> | 对比度: <span style="color:#eb5353">${contrast}%</span></div>\n  </div>\n  
-<div class="content" style="display:flex;font-weight:bold;padding-left:10px">\n  模糊半径：<input type="number" id="blurRad" placeholder="0" min="0" max="300" step="1" title="背景模糊半径:0-300px">&nbsp;px&nbsp;&nbsp;饱和度：<input type="number" id="saturation" placeholder="108" min="0" max="200" step="1" title="背景饱和度:0-200%">&nbsp;%&nbsp;&nbsp;对比度：<input type="number" id="contrast" placeholder="105" min="0" max="200" step="1" title="背景对比度:0-200%">&nbsp;%&nbsp;&nbsp;\n
-
-<button class="winbox_btn" type="button" onclick="debounce(saveBgFilter,300)" style="background:var(--theme-color);width:48px;border-radius:6px;color:white;line-height:1.2;height:28px;margin-top:2px;" title="点击保存背景滤镜参数">保存</button>\n
-
 <div class="content" style="display:flex">
   <div class="content-text" style="font-weight:bold; padding-left:10px"> 樱花特效 (白天生效) </div><input type="checkbox" id="canvas_sakuraSet" onclick="setSakura()">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 雪花特效 (白天生效) </div><input type="checkbox" id="snowSet" onclick="setSnow()">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 雪花特效 (白天生效) </div><input type="checkbox" id="snowSet" onclick="setSnow()">
 </div>
 
 <div class="content" style="display:flex">
@@ -3576,17 +3539,13 @@ function createWinbox() {
 </div>
 
 <div class="content" style="display:flex">
-  <div class="content-text" style="font-weight:bold; padding-left:20px"> 顶栏显示 (默认显示) </div><input type="checkbox" id="navSet" onclick="setNav()"></div>
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 侧栏显示 (默认显示) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
   <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧栏显示 (默认显示) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
 </div>
 
 <div class="content" style="display:flex">
-  <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧栏位置 (默认右边) </div><input type="checkbox" id="asidePosSet" onclick="setAsidePos()"></div>
-</div>
-
-<div class="content" style="display:flex">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 模糊效果 (消耗性能) </div><input type="checkbox" id="blur" onclick="setBlur()">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 帧率监测 (刷新生效) </div><input type="checkbox" id="fpson" onclick="fpssw()">
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 帧率监测 (默认开启) </div><input type="checkbox" id="fpson" onclick="fpssw()">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 模糊效果 (消耗性能) </div><input type="checkbox" id="blur" onclick="setBlur()">
 </div>
 
 
@@ -3733,7 +3692,6 @@ function createWinbox() {
   } else if (localStorage.getItem("canvas_sakura") == "none") {
     document.getElementById("canvas_sakuraSet").checked = false;
   }
-
 }
 
 // 恢复默认背景
@@ -3771,72 +3729,6 @@ function toggleWinbox() {
   };
 }
 
-
-var blurRadius, saturate, contrast;
-null == localStorage.getItem("blogbg") || "default" == localStorage.getItem("blogbg") ? (resetBg_(),
-null == localStorage.getItem("blogbg") && localStorage.setItem("blogbg", "default")) : setBg(localStorage.getItem("blogbg")),
-null == localStorage.getItem("light") && localStorage.setItem("light", "true"),
-document.addEventListener("pjax:complete", (function() {
-    changeLight("true" == localStorage.getItem("light"))
-}
-)),
-document.addEventListener("DOMContentLoaded", (function() {
-    changeLight("true" == localStorage.getItem("light"))
-}
-)),
-null == localStorage.getItem("bgFilterVal") && localStorage.setItem("bgFilterVal", "blur(0px) saturate(108%) contrast(105%)");
-var strs = localStorage.getItem("bgFilterVal").split(" ");
-
-function saveBgFilter() {
-  if (document.getElementById("blurRad").value < 0 || document.getElementById("blurRad").value > 300 || document.getElementById("saturation").value < 0 || document.getElementById("saturation").value > 200 || document.getElementById("contrast").value < 0 || document.getElementById("contrast").value > 200)
-      new Vue({
-          data: function() {
-              this.$notify({
-                  title: "警告💊",
-                  message: "背景滤镜参数不在合理范围内！",
-                  position: "top-left",
-                  offset: 50,
-                  showClose: !0,
-                  type: "warning",
-                  duration: 5e3
-              })
-          }
-      });
-  else {
-      var e = "blur(" + document.getElementById("blurRad").value + "px) saturate(" + document.getElementById("saturation").value + "%) contrast(" + document.getElementById("contrast").value + "%)";
-      localStorage.setItem("bgFilterVal", e),
-      "1" == localStorage.getItem("bgFilterOn") && (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}"),
-      blurRadius = document.getElementById("blurRad").value,
-      saturate = document.getElementById("saturation").value,
-      contrast = document.getElementById("contrast").value,
-      document.getElementById("bgFilterShow").innerHTML = '模糊半径: <span style="color:#eb5353">' + blurRadius + 'px</span> | 饱和度: <span style="color:#eb5353">' + saturate + '%</span> | 对比度: <span style="color:#eb5353">' + contrast + "%</span>",
-      new Vue({
-          data: function() {
-              this.$notify({
-                  title: "提示🍄",
-                  message: "设置背景滤镜参数成功！",
-                  position: "top-left",
-                  offset: 50,
-                  showClose: !0,
-                  type: "success",
-                  duration: 5e3
-              })
-          }
-      })
-  }
-}
-
-blurRadius = strs[0].substring(5, strs[0].length - 3),
-saturate = strs[1].substring(9, strs[1].length - 2),
-contrast = strs[2].substring(9, strs[2].length - 2),
-null == localStorage.getItem("bgFilterOn") && localStorage.setItem("bgFilterOn", "1"),
-"0" == localStorage.getItem("bgFilterOn") ? document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:none;}" : document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}";
-var winbox = "";
-
-function setBgFilter() {
-  document.getElementById("bgFilterSet").checked ? (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}",
-  localStorage.setItem("bgFilterOn", "1")) : (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:none;}",
-  localStorage.setItem("bgFilterOn", "0"))
-}
-
 /* 美化模块 end */
+
+
