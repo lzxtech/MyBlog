@@ -7801,9 +7801,9 @@ input#pic-link {
   -o-transform: translateY(58px) !important;
 }
 
-.nav-visible #nav {
+/* .nav-visible #nav {
   display: var(--nav-visible-display) !important;
-} 
+}  */
 
 #nav {
   transition: none !important;

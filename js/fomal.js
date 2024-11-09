@@ -556,6 +556,8 @@ dark()
 //----------------------------------------------------------------
 
 /* 樱花特效 start */
+function preSakura() {
+
 var stop, staticx;
 var img = new Image();
 // 将引入的图片文件替换为你想要的即可
@@ -701,16 +703,22 @@ window.onresize = function () {
 */ 
 
 function stopp() {
-    if (staticx) {
-        var child = document.getElementById("canvas_sakura");
-        child.parentNode.removeChild(child);
-        window.cancelAnimationFrame(stop);
-        staticx = false
-    } else {
-        startSakura()
-    }
+  if (staticx) {
+      var child = document.getElementById("canvas_sakura");
+      child.parentNode.removeChild(child);
+      window.cancelAnimationFrame(stop);
+      staticx = false
+  } else {
+      startSakura()
+  }
 };
+
 startSakura()
+
+}
+
+preSakura()
+
 /* 樱花特效 end */
 
 //----------------------------------------------------------------
@@ -3130,18 +3138,19 @@ function setColor(c) {
 
 // 樱花开关
 if (localStorage.getItem("canvas_sakura") == undefined) {
-  localStorage.setItem("canvas_sakura", "none");
+  localStorage.setItem("canvas_sakura", "block"); 
 }
-document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");
-function setSakura() {
-  if (document.getElementById("canvas_sakuraSet").checked) {
-    document.getElementById("canvas_sakura").style.display = "block";
-    localStorage.setItem("canvas_sakura", "block");
-  } else {
-    document.getElementById("canvas_sakura").style.display = "none";
-    localStorage.setItem("canvas_sakura", "none");
-  }
-}
+ document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");
+ function setSakura() {
+   if (document.getElementById("canvas_sakuraSet").checked) {
+     document.getElementById("canvas_sakura").style.display = "block";
+     localStorage.setItem("canvas_sakura", "block");
+   } else {
+     document.getElementById("canvas_sakura").style.display = "none";
+     localStorage.setItem("canvas_sakura", "none");
+   }
+ }
+
 
 // 雪花开关
 if (localStorage.getItem("snow") == undefined) {
@@ -3175,7 +3184,7 @@ function setUniverse() {
   }
 }
 
-// 黑夜霓虹灯开关
+// 黑夜霓虹灯开关（默认开）
 if (localStorage.getItem("light") == undefined) {
   localStorage.setItem("light", "true");
 }
