@@ -555,6 +555,166 @@ dark()
 
 //----------------------------------------------------------------
 
+/* 樱花特效 start */
+var stop, staticx;
+var img = new Image();
+// 将引入的图片文件替换为你想要的即可
+img.src = "https://xuansanblog.s3.bitiful.net/blogappwebp/sakura.webp";
+
+function Sakura(x, y, s, r, fn) {
+    this.x = x;
+    this.y = y;
+    this.s = s;
+    this.r = r;
+    this.fn = fn
+}
+Sakura.prototype.draw = function (cxt) {
+    cxt.save();
+    var xc = 20 * this.s / 2;
+    cxt.translate(this.x, this.y);
+    cxt.rotate(this.r);
+    cxt.drawImage(img, 0, 0, 20 * this.s, 20 * this.s);
+    cxt.restore()
+};
+Sakura.prototype.update = function () {
+    this.x = this.fn.x(this.x, this.y);
+    this.y = this.fn.y(this.y, this.y);
+    this.r = this.fn.r(this.r);
+    if (this.x > window.innerWidth || this.x < 0 || this.y > window.innerHeight || this.y < 0) {
+        this.r = getRandom("fnr");
+        if (Math.random() > 0.4) {
+            this.x = getRandom("x");
+            this.y = 0;
+            this.s = getRandom("s");
+            this.r = getRandom("r")
+        } else {
+            this.x = window.innerWidth;
+            this.y = getRandom("y");
+            this.s = getRandom("s");
+            this.r = getRandom("r")
+        }
+    }
+};
+SakuraList = function () {
+    this.list = []
+};
+SakuraList.prototype.push = function (sakura) {
+    this.list.push(sakura)
+};
+SakuraList.prototype.update = function () {
+    for (var i = 0, len = this.list.length; i < len; i++) {
+        this.list[i].update()
+    }
+};
+SakuraList.prototype.draw = function (cxt) {
+    for (var i = 0, len = this.list.length; i < len; i++) {
+        this.list[i].draw(cxt)
+    }
+};
+SakuraList.prototype.get = function (i) {
+    return this.list[i]
+};
+SakuraList.prototype.size = function () {
+    return this.list.length
+};
+
+function getRandom(option) {
+    var ret, random;
+    switch (option) {
+        case "x":
+            ret = Math.random() * window.innerWidth;
+            break;
+        case "y":
+            ret = Math.random() * window.innerHeight;
+            break;
+        case "s":
+            ret = Math.random();
+            break;
+        case "r":
+            ret = Math.random() * 4;
+            break;
+        case "fnx":
+            random = -0.5 + Math.random() * 1;
+            ret = function (x, y) {
+                return x + 0.5 * random - 1.7
+            };
+            break;
+        case "fny":
+            random = 1.5 + Math.random() * 0.7;
+            ret = function (x, y) {
+                return y + random
+            };
+            break;
+        case "fnr":
+            random = Math.random() * 0.03;
+            ret = function (r) {
+                return r + random
+            };
+            break
+    }
+    return ret
+}
+
+function startSakura() {
+    requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
+    var canvas = document.createElement("canvas"),
+        cxt;
+    staticx = true;
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.setAttribute("style", "position: fixed;left: 0;top: 0;pointer-events: none;");
+    canvas.setAttribute("id", "canvas_sakura");
+    document.getElementsByTagName("body")[0].appendChild(canvas);
+    cxt = canvas.getContext("2d");
+    var sakuraList = new SakuraList();
+    for (var i = 0; i < 50; i++) {
+        var sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny;
+        randomX = getRandom("x");
+        randomY = getRandom("y");
+        randomR = getRandom("r");
+        randomS = getRandom("s");
+        randomFnx = getRandom("fnx");
+        randomFny = getRandom("fny");
+        randomFnR = getRandom("fnr");
+        sakura = new Sakura(randomX, randomY, randomS, randomR, {
+            x: randomFnx,
+            y: randomFny,
+            r: randomFnR
+        });
+        sakura.draw(cxt);
+        sakuraList.push(sakura)
+    }
+    stop = requestAnimationFrame(function () {
+        cxt.clearRect(0, 0, canvas.width, canvas.height);
+        sakuraList.update();
+        sakuraList.draw(cxt);
+        stop = requestAnimationFrame(arguments.callee)
+    })
+}
+window.onresize = function () {
+    var canvasSnow = document.getElementById("canvas_snow")
+};
+
+/* img.onload = function () {
+   startSakura()
+  };  // 不要让它图片加载时才生效
+*/ 
+
+function stopp() {
+    if (staticx) {
+        var child = document.getElementById("canvas_sakura");
+        child.parentNode.removeChild(child);
+        window.cancelAnimationFrame(stop);
+        staticx = false
+    } else {
+        startSakura()
+    }
+};
+startSakura()
+/* 樱花特效 end */
+
+//----------------------------------------------------------------
+
 /* 表情放大 start */
 document.addEventListener('pjax:complete', function () {
   if (document.getElementById('post-comment')) owoBig();
@@ -2918,8 +3078,8 @@ function clearItem() {
   localStorage.removeItem('mouse');
   localStorage.removeItem('light');
   localStorage.removeItem('snow');
+  localStorage.removeItem('canvas_sakura');
 }
-
 
 // 设置字体
 if (localStorage.getItem("font") == undefined) {
@@ -2968,21 +3128,18 @@ function setColor(c) {
   document.documentElement.style.setProperty("--high-trans-color", high_trans_color);
 }
 
-
-// 星空背景开关
-if (localStorage.getItem("universe") == undefined) {
-  localStorage.setItem("universe", "block");
+// 樱花开关
+if (localStorage.getItem("canvas_sakura") == undefined) {
+  localStorage.setItem("canvas_sakura", "none");
 }
-setUniverse2(localStorage.getItem("universe"));
-function setUniverse2(c) {
-  document.getElementById("universe").style.display = c;
-  localStorage.setItem("universe", c);
-}
-function setUniverse() {
-  if (document.getElementById("universeSet").checked) {
-    setUniverse2("block");
+document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");
+function setSakura() {
+  if (document.getElementById("canvas_sakuraSet").checked) {
+    document.getElementById("canvas_sakura").style.display = "block";
+    localStorage.setItem("canvas_sakura", "block");
   } else {
-    setUniverse2("none");
+    document.getElementById("canvas_sakura").style.display = "none";
+    localStorage.setItem("canvas_sakura", "none");
   }
 }
 
@@ -3001,23 +3158,54 @@ function setSnow() {
   }
 }
 
-
-// 帧率监测开关
-if (localStorage.getItem("fpson") == undefined) {
-  localStorage.setItem("fpson", "1");
+// 星空背景开关
+if (localStorage.getItem("universe") == undefined) {
+  localStorage.setItem("universe", "block");
 }
-function fpssw() {
-  if (document.getElementById("fpson").checked) {
-    localStorage.setItem("fpson", "1");
+setUniverse2(localStorage.getItem("universe"));
+function setUniverse2(c) {
+  document.getElementById("universe").style.display = c;
+  localStorage.setItem("universe", c);
+}
+function setUniverse() {
+  if (document.getElementById("universeSet").checked) {
+    setUniverse2("block");
   } else {
-    localStorage.setItem("fpson", "0");
+    setUniverse2("none");
   }
-  setTimeout(reload, 600);
 }
 
-// 刷新窗口
-function reload() {
-  window.location.reload();
+// 黑夜霓虹灯开关
+if (localStorage.getItem("light") == undefined) {
+  localStorage.setItem("light", "true");
+}
+// 这里要适配Pjax
+document.addEventListener('pjax:complete', function () {
+  changeLight(localStorage.getItem("light") == "true" ? true : false)
+});
+document.addEventListener('DOMContentLoaded', function () {
+  changeLight(localStorage.getItem("light") == "true" ? true : false)
+});
+function setLight() {
+  if (document.getElementById("lightSet").checked) {
+    changeLight(true);
+    localStorage.setItem("light", "true");
+  } else {
+    changeLight(false);
+    localStorage.setItem("light", "false");
+  }
+}
+// 更换霓虹灯状态
+function changeLight(flag) {
+  if (document.getElementById("site-name"))
+    document.getElementById("site-name").style.animation = flag ? "light_15px 10s linear infinite" : "none";
+  if (document.getElementById("site-title"))
+    document.getElementById("site-title").style.animation = flag ? "light_15px 10s linear infinite" : "none";
+  if (document.getElementById("site-subtitle"))
+    document.getElementById("site-subtitle").style.animation = flag ? "light_10px 10s linear infinite" : "none";
+  if (document.getElementById("post-info"))
+    document.getElementById("post-info").style.animation = flag ? "light_5px 10s linear infinite" : "none";
+  document.getElementById("menu_shadow").innerText = flag ? `:root{--menu-shadow: 0 0 1px var(--theme-color);}` : `:root{--menu-shadow: none;}`;
 }
 
 // 侧边栏开关
@@ -3040,6 +3228,68 @@ function toggleRightside() {
   }
 }
 
+
+
+// function setAside() {
+//   document.getElementById("asideSet").checked ? (localStorage.setItem("aside", "1"),
+//   document.getElementById("aside-show").innerText = ":root{--layout-justify-content: unset; --aside-content-display: block;}") : (localStorage.setItem("aside", "0"),
+//   document.getElementById("aside-show").innerText = ":root{--layout-justify-content: center; --aside-content-display: none;}")
+// }
+// 顶栏显示
+function setNav() {
+  document.getElementById("navSet").checked ? (document.getElementById("nav").classList.add("nav_fixed"),
+  document.getElementById("nav").classList.remove("nav_visible"),
+  document.getElementById("nav-display").innerText = ":root{--nav-visible-display:none;--nav-fixed-display:inline-flex;}",
+  localStorage.setItem("nav", "1")) : (document.getElementById("nav").classList.add("nav_visible"),
+  document.getElementById("nav").classList.remove("nav_fixed"),
+  document.getElementById("nav-display").innerText = ":root{--nav-visible-display:inline-flex;--nav-fixed-display:none;}",
+  localStorage.setItem("nav", "0"))
+}
+
+
+// 侧栏位置
+function setAsidePos() {
+  document.getElementById("asidePosSet").checked ? (localStorage.setItem("asidePos", "1"),
+  document.getElementById("aside-pos").innerText = ":root{--first-child-order: 0; --recent-post-item-margin: 0px 1% 20px 0px;}") : (localStorage.setItem("asidePos", "0"),
+  document.getElementById("aside-pos").innerText = ":root{--first-child-order: 2; --recent-post-item-margin: 0px 0px 20px 1%;}")
+}
+
+// 模糊效果开关
+if (localStorage.getItem("blur") == undefined) {
+  localStorage.setItem("blur", 0);
+}
+if (localStorage.getItem("blur") == 0) {
+  document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: none}`;
+} else {
+  document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: var(--blur-num)}`;
+}
+function setBlur() {
+  if (document.getElementById("blur").checked) {
+    localStorage.setItem("blur", 1);
+    document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: var(--blur-num)}`;
+  } else {
+    localStorage.setItem("blur", 0);
+    document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: none}`;
+  }
+}
+
+// 帧率监测开关
+if (localStorage.getItem("fpson") == undefined) {
+  localStorage.setItem("fpson", "1");
+}
+function fpssw() {
+  if (document.getElementById("fpson").checked) {
+    localStorage.setItem("fpson", "1");
+  } else {
+    localStorage.setItem("fpson", "0");
+  }
+  setTimeout(reload, 600);
+}
+
+// 刷新窗口
+function reload() {
+  window.location.reload();
+}
 
 // 透明度调节滑块
 if (localStorage.getItem("transNum") == undefined) {
@@ -3080,26 +3330,6 @@ function setBlurNum() {
   document.querySelector('#rang_blur').style.width = miniBlur + "%";
   document.getElementById("blurNum").innerText = `:root{--blur-num: blur(${curBlur}px) saturate(120%) !important`;
 };
-
-
-// 模糊效果开关
-if (localStorage.getItem("blur") == undefined) {
-  localStorage.setItem("blur", 0);
-}
-if (localStorage.getItem("blur") == 0) {
-  document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: none}`;
-} else {
-  document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: var(--blur-num)}`;
-}
-function setBlur() {
-  if (document.getElementById("blur").checked) {
-    localStorage.setItem("blur", 1);
-    document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: var(--blur-num)}`;
-  } else {
-    localStorage.setItem("blur", 0);
-    document.getElementById("settingStyle").innerText = `:root{--backdrop-filter: none}`;
-  }
-}
 
 // 更换背景(原来Leonus的代码)
 // 存数据
@@ -3162,7 +3392,7 @@ let picsum = "url(https://picsum.photos/1920/1080.webp)";
 // 小歪二次元
 // let waiDongman = "url(https://api.ixiaowai.cn/api/api.php)";
 //  小歪高清壁纸
-let waiBizhi = "url(https://api.ixiaowai.cn/gqapi/gqapi.php)";
+// let waiBizhi = "url(https://api.ixiaowai.cn/gqapi/gqapi.php)";
 // 博天随机
 let btstu = "url(http://api.btstu.cn/sjbz/?lx=suiji)";
 // tuapi 动漫
@@ -3254,41 +3484,6 @@ function checkImgExists(imgurl) {
   })
 }
 
-// 黑夜霓虹灯开关
-if (localStorage.getItem("light") == undefined) {
-  localStorage.setItem("light", "true");
-}
-// 这里要适配Pjax
-document.addEventListener('pjax:complete', function () {
-  changeLight(localStorage.getItem("light") == "true" ? true : false)
-});
-document.addEventListener('DOMContentLoaded', function () {
-  changeLight(localStorage.getItem("light") == "true" ? true : false)
-});
-function setLight() {
-  if (document.getElementById("lightSet").checked) {
-    changeLight(true);
-    localStorage.setItem("light", "true");
-  } else {
-    changeLight(false);
-    localStorage.setItem("light", "false");
-  }
-}
-// 更换霓虹灯状态
-function changeLight(flag) {
-  if (document.getElementById("site-name"))
-    document.getElementById("site-name").style.animation = flag ? "light_15px 10s linear infinite" : "none";
-  if (document.getElementById("site-title"))
-    document.getElementById("site-title").style.animation = flag ? "light_15px 10s linear infinite" : "none";
-  if (document.getElementById("site-subtitle"))
-    document.getElementById("site-subtitle").style.animation = flag ? "light_10px 10s linear infinite" : "none";
-  if (document.getElementById("post-info"))
-    document.getElementById("post-info").style.animation = flag ? "light_5px 10s linear infinite" : "none";
-  document.getElementById("menu_shadow").innerText = flag ? `:root{--menu-shadow: 0 0 1px var(--theme-color);}` : `:root{--menu-shadow: none;}`;
-}
-
-
-
 // 解决开启Pjax的问题
 // function whenDOMReady() {
 //   try {
@@ -3336,7 +3531,12 @@ function createWinbox() {
     },
   });
   winResize();
+
   window.addEventListener("resize", winResize);
+
+  document.getElementById("blurRad").value = blurRadius,  // 参数
+  document.getElementById("saturation").value = saturate,
+  document.getElementById("contrast").value = contrast,
 
   // 每一类我放了一个演示，直接往下复制粘贴 a标签 就可以，需要注意的是 函数里面的链接 冒号前面需要添加反斜杠\进行转义
   winbox.body.innerHTML = `
@@ -3359,21 +3559,36 @@ function createWinbox() {
   <p class="rang_width" id="rang_blur" style="width:${miniBlur}%"></p>
 </div>
 
+<div class="content-text" style="font-weight:bold; padding-left:10px; "> 背景滤镜 </div><input type="checkbox" id="bgFilterSet" onclick="setBgFilter()">
+<div class="bgFilterValue" id="bgFilterShow" style="font-weight:bold;padding-left:10px">模糊半径: <span style="color:#eb5353">${blurRadius}px</span> | 饱和度: <span style="color:#eb5353">${saturate}%</span> | 对比度: <span style="color:#eb5353">${contrast}%</span></div>\n  </div>\n  
+<div class="content" style="display:flex;font-weight:bold;padding-left:10px">\n  模糊半径：<input type="number" id="blurRad" placeholder="0" min="0" max="300" step="1" title="背景模糊半径:0-300px">&nbsp;px&nbsp;&nbsp;饱和度：<input type="number" id="saturation" placeholder="108" min="0" max="200" step="1" title="背景饱和度:0-200%">&nbsp;%&nbsp;&nbsp;对比度：<input type="number" id="contrast" placeholder="105" min="0" max="200" step="1" title="背景对比度:0-200%">&nbsp;%&nbsp;&nbsp;\n
+
+<button class="winbox_btn" type="button" onclick="debounce(saveBgFilter,300)" style="background:var(--theme-color);width:48px;border-radius:6px;color:white;line-height:1.2;height:28px;margin-top:2px;" title="点击保存背景滤镜参数">保存</button>\n
 
 <div class="content" style="display:flex">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 星空特效 (夜间模式) </div><input type="checkbox" id="universeSet" onclick="setUniverse()">
-  <div class="content-text" style="font-weight:bold; padding-left:20px"> 霓虹灯 (夜间模式) </div><input type="checkbox" id="lightSet" onclick="setLight()">
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 樱花特效 (白天生效) </div><input type="checkbox" id="canvas_sakuraSet" onclick="setSakura()">
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 雪花特效 (白天生效) </div><input type="checkbox" id="snowSet" onclick="setSnow()">
+</div>
+
+<div class="content" style="display:flex">
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 星空特效 (夜间生效) </div><input type="checkbox" id="universeSet" onclick="setUniverse()">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 霓虹字体 (夜间生效) </div><input type="checkbox" id="lightSet" onclick="setLight()">
+</div>
+
+<div class="content" style="display:flex">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 顶栏显示 (默认显示) </div><input type="checkbox" id="navSet" onclick="setNav()"></div>
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧栏显示 (默认显示) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
+</div>
+
+<div class="content" style="display:flex">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧栏位置 (默认右边) </div><input type="checkbox" id="asidePosSet" onclick="setAsidePos()"></div>
 </div>
 
 <div class="content" style="display:flex">
   <div class="content-text" style="font-weight:bold; padding-left:10px"> 模糊效果 (消耗性能) </div><input type="checkbox" id="blur" onclick="setBlur()">
-  <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧边栏 (默认开) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
+  <div class="content-text" style="font-weight:bold; padding-left:10px"> 帧率监测 (刷新生效) </div><input type="checkbox" id="fpson" onclick="fpssw()">
 </div>
 
-<div class="content" style="display:flex">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 帧率监测 (刷新生效) </div><input type="checkbox" id="fpson" onclick="fpssw()">
-  <div class="content-text" style="font-weight:bold; padding-left:10px"> 雪花特效 (白天模式) </div><input type="checkbox" id="snowSet" onclick="setSnow()">
-</div>
 
 
 <h2>二、字体设置</h2>
@@ -3458,7 +3673,7 @@ function createWinbox() {
 <h3>7. 壁纸API</h3>
 <details class="folding-tag" cyan><summary> 查看壁纸API系列背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a id="bingDayBox" rel="noopener external nofollow" style="background-image: ${bingDayBg}" class="box apiBox" onclick="changeBg('${bingDayBg}')"></a><a id="bingHistoryBox" rel="noopener external nofollow" style="background-image: ${bingHistoryBg}" class="box apiBox" onclick="changeBg('${bingHistoryBg}')"></a><a id="EEEDogBox" rel="noopener external nofollow" style="background-image: ${EEEDog}" class="box apiBox" onclick="changeBg('${EEEDog}')"></a><a id="seovxBox" rel="noopener external nofollow" style="background-image: ${seovx}" class="box apiBox" onclick="changeBg('${seovx}')"></a><a id="picsumBox" rel="noopener external nofollow" style="background-image: ${picsum}" class="box apiBox" onclick="changeBg('${picsum}')"></a><a id="waiBizhiBox" rel="noopener external nofollow" style="background-image: ${waiBizhi}" class="box apiBox" onclick="changeBg('${waiBizhi}')"></a><a id="btstuBox" rel="noopener external nofollow" style="background-image: ${btstu}" class="box apiBox" onclick="changeBg('${btstu}')"></a><a id="unsplashBox" rel="noopener external nofollow" style="background-image: ${unsplash}" class="box apiBox" onclick="changeBg('${unsplash}')"></a></div>
+              <div class="bgbox"><a id="bingDayBox" rel="noopener external nofollow" style="background-image: ${bingDayBg}" class="box apiBox" onclick="changeBg('${bingDayBg}')"></a><a id="bingHistoryBox" rel="noopener external nofollow" style="background-image: ${bingHistoryBg}" class="box apiBox" onclick="changeBg('${bingHistoryBg}')"></a><a id="EEEDogBox" rel="noopener external nofollow" style="background-image: ${EEEDog}" class="box apiBox" onclick="changeBg('${EEEDog}')"></a><a id="seovxBox" rel="noopener external nofollow" style="background-image: ${seovx}" class="box apiBox" onclick="changeBg('${seovx}')"></a><a id="picsumBox" rel="noopener external nofollow" style="background-image: ${picsum}" class="box apiBox" onclick="changeBg('${picsum}')"></a><a id="btstuBox" rel="noopener external nofollow" style="background-image: ${btstu}" class="box apiBox" onclick="changeBg('${btstu}')"></a><a id="unsplashBox" rel="noopener external nofollow" style="background-image: ${unsplash}" class="box apiBox" onclick="changeBg('${unsplash}')"></a></div>
               </div>
             </details>
 
@@ -3513,6 +3728,12 @@ function createWinbox() {
   } else if (localStorage.getItem("snow") == "none") {
     document.getElementById("snowSet").checked = false;
   }
+  if (localStorage.getItem("canvas_sakura") == "block") {
+    document.getElementById("canvas_sakuraSet").checked = true;
+  } else if (localStorage.getItem("canvas_sakura") == "none") {
+    document.getElementById("canvas_sakuraSet").checked = false;
+  }
+
 }
 
 // 恢复默认背景
@@ -3548,6 +3769,74 @@ function toggleWinbox() {
   } else {
     createWinbox();
   };
+}
+
+
+var blurRadius, saturate, contrast;
+null == localStorage.getItem("blogbg") || "default" == localStorage.getItem("blogbg") ? (resetBg_(),
+null == localStorage.getItem("blogbg") && localStorage.setItem("blogbg", "default")) : setBg(localStorage.getItem("blogbg")),
+null == localStorage.getItem("light") && localStorage.setItem("light", "true"),
+document.addEventListener("pjax:complete", (function() {
+    changeLight("true" == localStorage.getItem("light"))
+}
+)),
+document.addEventListener("DOMContentLoaded", (function() {
+    changeLight("true" == localStorage.getItem("light"))
+}
+)),
+null == localStorage.getItem("bgFilterVal") && localStorage.setItem("bgFilterVal", "blur(0px) saturate(108%) contrast(105%)");
+var strs = localStorage.getItem("bgFilterVal").split(" ");
+
+function saveBgFilter() {
+  if (document.getElementById("blurRad").value < 0 || document.getElementById("blurRad").value > 300 || document.getElementById("saturation").value < 0 || document.getElementById("saturation").value > 200 || document.getElementById("contrast").value < 0 || document.getElementById("contrast").value > 200)
+      new Vue({
+          data: function() {
+              this.$notify({
+                  title: "警告💊",
+                  message: "背景滤镜参数不在合理范围内！",
+                  position: "top-left",
+                  offset: 50,
+                  showClose: !0,
+                  type: "warning",
+                  duration: 5e3
+              })
+          }
+      });
+  else {
+      var e = "blur(" + document.getElementById("blurRad").value + "px) saturate(" + document.getElementById("saturation").value + "%) contrast(" + document.getElementById("contrast").value + "%)";
+      localStorage.setItem("bgFilterVal", e),
+      "1" == localStorage.getItem("bgFilterOn") && (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}"),
+      blurRadius = document.getElementById("blurRad").value,
+      saturate = document.getElementById("saturation").value,
+      contrast = document.getElementById("contrast").value,
+      document.getElementById("bgFilterShow").innerHTML = '模糊半径: <span style="color:#eb5353">' + blurRadius + 'px</span> | 饱和度: <span style="color:#eb5353">' + saturate + '%</span> | 对比度: <span style="color:#eb5353">' + contrast + "%</span>",
+      new Vue({
+          data: function() {
+              this.$notify({
+                  title: "提示🍄",
+                  message: "设置背景滤镜参数成功！",
+                  position: "top-left",
+                  offset: 50,
+                  showClose: !0,
+                  type: "success",
+                  duration: 5e3
+              })
+          }
+      })
+  }
+}
+
+blurRadius = strs[0].substring(5, strs[0].length - 3),
+saturate = strs[1].substring(9, strs[1].length - 2),
+contrast = strs[2].substring(9, strs[2].length - 2),
+null == localStorage.getItem("bgFilterOn") && localStorage.setItem("bgFilterOn", "1"),
+"0" == localStorage.getItem("bgFilterOn") ? document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:none;}" : document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}";
+var winbox = "";
+
+function setBgFilter() {
+  document.getElementById("bgFilterSet").checked ? (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:" + localStorage.getItem("bgFilterVal") + ";}",
+  localStorage.setItem("bgFilterOn", "1")) : (document.getElementById("bgFilterParam").innerText = ":root{--bg-filter:none;}",
+  localStorage.setItem("bgFilterOn", "0"))
 }
 
 /* 美化模块 end */
