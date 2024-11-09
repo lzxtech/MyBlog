@@ -3228,6 +3228,27 @@ function toggleRightside() {
   }
 }
 
+// 顶栏显示
+function setNav() {
+  // 先设置localStorage变量
+  if (document.getElementById("navSet").checked) {
+    localStorage.setItem("nav", "block");
+    document.getElementById("nav-visible").innerText = `:root{--nav-visible-display: block}`;
+  } else {
+    localStorage.setItem("nav", "none");
+    document.getElementById("nav-visible").innerText = `:root{--nav-visible-display: none}`;
+  }
+}
+// function setNav() {
+//   document.getElementById("navSet").checked ? (document.getElementById("nav").classList.add("nav_fixed"),
+//   document.getElementById("nav").classList.remove("nav_visible"),
+//   document.getElementById("nav-display").innerText = ":root{--nav-visible-display:none;--nav-fixed-display:inline-flex;}",
+//   localStorage.setItem("nav", "1")) : (document.getElementById("nav").classList.add("nav_visible"),
+//   document.getElementById("nav").classList.remove("nav_fixed"),
+//   document.getElementById("nav-display").innerText = ":root{--nav-visible-display:inline-flex;--nav-fixed-display:none;}",
+//   localStorage.setItem("nav", "0"))
+// }
+
 // 模糊效果开关
 if (localStorage.getItem("blur") == undefined) {
   localStorage.setItem("blur", 0);
@@ -3540,7 +3561,7 @@ function createWinbox() {
 
 <div class="content" style="display:flex">
   <div class="content-text" style="font-weight:bold; padding-left:10px"> 侧栏显示 (默认显示) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
-  <div class="content-text" style="font-weight:bold; padding-left:20px"> 侧栏显示 (默认显示) </div><input type="checkbox" id="rightSideSet" onclick="toggleRightside()">
+  <div class="content-text" style="font-weight:bold; padding-left:20px"> 顶栏显示 (默认显示) </div><input type="checkbox" id="navSet" onclick="setNav()">\n
 </div>
 
 <div class="content" style="display:flex">
@@ -3676,6 +3697,9 @@ function createWinbox() {
   } else if (localStorage.getItem("rs") == "none") {
     document.getElementById("rightSideSet").checked = false;
   }
+
+  "1" == localStorage.getItem("nav") ? document.getElementById("navSet").checked = !0 : "0" == localStorage.getItem("nav") && (document.getElementById("navSet").checked = !1)
+
   if (localStorage.getItem("light") == "true") {
     document.getElementById("lightSet").checked = true;
   } else {

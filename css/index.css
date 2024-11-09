@@ -6747,16 +6747,6 @@ div#archive {
   border-radius: 20px;
 }
 
-/* 导航栏颜色 */
-#page-header.nav-fixed #nav {
-  background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
-  opacity: 0.95;
-  backdrop-filter: var(--backdrop-filter);
-}
-[data-theme="dark"] #page-header.nav-fixed #nav {
-  background: rgba(0, 0, 0, 0.95) !important;
-}
-
 /* 夜间模式遮罩 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] #aside-content .card-widget,
@@ -7783,7 +7773,26 @@ input#pic-link {
   --loading-color: rgba(25, 25, 25, 0.92) !important;
 }
 
+/* 导航栏颜色 */
+#page-header.nav-fixed #nav {
+  background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
+  opacity: 0.95;
+  backdrop-filter: var(--backdrop-filter);
+}
+[data-theme="dark"] #page-header.nav-fixed #nav {
+  background: rgba(0, 0, 0, 0.95) !important;
+} 
+
 /* 顶栏常驻 */
+/* .nav-fixed #nav {
+  transform: translateY(58px) !important;
+  -webkit-transform: translateY(58px) !important;
+  -moz-transform: translateY(58px) !important;
+  -ms-transform: translateY(58px) !important;
+  -o-transform: translateY(58px) !important;
+} */
+
+/* 顶部是否可见 */
 .nav-fixed #nav {
   transform: translateY(58px) !important;
   -webkit-transform: translateY(58px) !important;
@@ -7791,6 +7800,11 @@ input#pic-link {
   -ms-transform: translateY(58px) !important;
   -o-transform: translateY(58px) !important;
 }
+
+.nav-visible #nav {
+  display: var(--nav-visible-display) !important;
+} 
+
 #nav {
   transition: none !important;
   -webkit-transition: none !important;
@@ -8235,6 +8249,13 @@ a:hover {
 /* 侧边栏 */
 div#rightside {
   display: var(--rightside-display);
+  opacity: 0.98 !important;
+  transform: translateX(-58px);
+}
+
+/* 侧边栏位置 */
+div#asidepos {
+  display: var(--asidepos-position);
   opacity: 0.98 !important;
   transform: translateX(-58px);
 }
