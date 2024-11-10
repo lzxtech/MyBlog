@@ -557,6 +557,7 @@ dark()
 
 /* 樱花特效 start */
 function preSakura() {
+
   var stop, staticx;
   var img = new Image();
   // 将引入的图片文件替换为你想要的即可
@@ -3137,7 +3138,7 @@ function setColor(c) {
 if (localStorage.getItem("canvas_sakura") == undefined) {  
   localStorage.setItem("canvas_sakura", "block");  //如果尚未定义，默认为开
 }
- document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");  //读取并拿到是否开启的属性
+ document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");  //读取并拿到是否开启的属性，如果默认开启就注释，默认关闭就打开
  function setSakura() {
    if (document.getElementById("canvas_sakuraSet").checked) {
      document.getElementById("canvas_sakura").style.display = "block";
