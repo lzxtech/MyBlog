@@ -3083,10 +3083,6 @@ function clearItem() {
   localStorage.removeItem('canvas_sakura');
 }
 
-function clearSakura() {
-  localStorage.removeItem('canvas_sakura');
-}
-
 // 设置字体
 if (localStorage.getItem("font") == undefined) {
   localStorage.setItem("font", "LXGW");
