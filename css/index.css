@@ -7691,13 +7691,13 @@ button#go-up:hover #percent {
 
 /* 个人信息卡片背景图 */
 [data-theme="light"] #aside-content > .card-widget.card-info {
-  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/PIBL.webp);  /* url样式 白天的个人信息背景 */
+  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/cardlight.webp);  /* url样式 白天的个人信息背景 */
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
 }
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/PIBD.webp);  /* url样式 晚上的个人信息背景 */
+  background-image: url(https://xuansanblog.s3.bitiful.net/blogappwebp/carddark.webp);  /* url样式 晚上的个人信息背景 */
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
