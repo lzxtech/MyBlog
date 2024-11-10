@@ -3138,7 +3138,7 @@ function setColor(c) {
 if (localStorage.getItem("canvas_sakura") == undefined) {  
   localStorage.setItem("canvas_sakura", "block");  //如果尚未定义，默认为开
 }
- document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");  //读取并拿到是否开启的属性，如果默认开启就注释，默认关闭就打开
+ //document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");  //读取并拿到是否开启的属性，如果默认开启就注释，默认关闭就打开
  function setSakura() {
    if (document.getElementById("canvas_sakuraSet").checked) {
      document.getElementById("canvas_sakura").style.display = "block";
