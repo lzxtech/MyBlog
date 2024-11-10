@@ -556,8 +556,6 @@ dark()
 //----------------------------------------------------------------
 
 /* 樱花特效 start */
-function preSakura() {
-
 var stop, staticx;
 var img = new Image();
 // 将引入的图片文件替换为你想要的即可
@@ -703,21 +701,16 @@ window.onresize = function () {
 */ 
 
 function stopp() {
-  if (staticx) {
-      var child = document.getElementById("canvas_sakura");
-      child.parentNode.removeChild(child);
-      window.cancelAnimationFrame(stop);
-      staticx = false
-  } else {
-      startSakura()
-  }
+    if (staticx) {
+        var child = document.getElementById("canvas_sakura");
+        child.parentNode.removeChild(child);
+        window.cancelAnimationFrame(stop);
+        staticx = false
+    } else {
+        startSakura()
+    }
 };
-
-startSakura()
-
-}
-
-preSakura()
+startSakura()  //先执行方法，默认开启特效，否则开关读不到style属性
 
 /* 樱花特效 end */
 
@@ -2972,9 +2965,9 @@ function createtime() {
   let currentTimeHtml = "";
   (currentTimeHtml =
     hnum < 18 && hnum >= 9
-      ? `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/22/lazyfish.jpg' style="width: 50px; height: 50px; border-radius: 20px" title='科研摸鱼中~'>
+      ? `<img class='boardsign' src='https://xuansanblog.s3.bitiful.net/blogappwebp/lazyfish.webp' style="width: 50px; height: 50px; border-radius: 20px" title='科研摸鱼中~'>
       <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<img class='boardsign' src='https://tuchuang.voooe.cn/images/2024/10/28/getoffwork.jpg' style="width: 50px; height: 50px; border-radius: 20px" title='终于下班啦~'>
+      : `<img class='boardsign' src='https://xuansanblog.s3.bitiful.net/blogappwebp/getoffwork.webp' style="width: 50px; height: 50px; border-radius: 20px" title='终于下班啦~'>
       <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
     document.getElementById("workboard") &&
     (document.getElementById("workboard").innerHTML = currentTimeHtml);
@@ -3137,10 +3130,10 @@ function setColor(c) {
 }
 
 // 樱花开关
-if (localStorage.getItem("canvas_sakura") == undefined) {
-  localStorage.setItem("canvas_sakura", "block"); 
+if (localStorage.getItem("canvas_sakura") == undefined) {  
+  localStorage.setItem("canvas_sakura", "block");  //如果尚未定义，默认为开
 }
- document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");
+ document.getElementById("canvas_sakura").style.display = localStorage.getItem("canvas_sakura");  //读取并拿到是否开启的属性
  function setSakura() {
    if (document.getElementById("canvas_sakuraSet").checked) {
      document.getElementById("canvas_sakura").style.display = "block";
@@ -3237,17 +3230,6 @@ function toggleRightside() {
   }
 }
 
-// 顶栏显示
-function setNav() {
-  // 先设置localStorage变量
-  if (document.getElementById("navSet").checked) {
-    localStorage.setItem("nav", "block");
-    document.getElementById("nav-visible").innerText = `:root{--nav-visible-display: block}`;
-  } else {
-    localStorage.setItem("nav", "none");
-    document.getElementById("nav-visible").innerText = `:root{--nav-visible-display: none}`;
-  }
-}
 // function setNav() {
 //   document.getElementById("navSet").checked ? (document.getElementById("nav").classList.add("nav_fixed"),
 //   document.getElementById("nav").classList.remove("nav_visible"),

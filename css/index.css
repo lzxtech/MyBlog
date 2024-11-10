@@ -7763,7 +7763,7 @@ input#pic-link {
 
 /* heo 加载动画头像 */
 .loading-img {
-  background:  url(https://tuchuang.voooe.cn/images/2024/10/21/Profile-Picture.jpg)  /* url样式 */
+  background:  url(https://xuansanblog.s3.bitiful.net/blogappwebp/profile.webp)  /* url样式 */
     no-repeat center center;
   background-size: cover;
 }
